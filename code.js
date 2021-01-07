@@ -41,8 +41,8 @@ function total(){
     let amount =  document.getElementById("currency").value;
     let currentValue = document.getElementById("totall").value;
 
-    let add = parseInt(amount) +parseInt(currentValue); 
+    let add = Number(amount) +Number(currentValue); 
 
 
-     document.getElementById("totall").value= add;
+     document.getElementById("totall").value= add.toFixed(2);
 }
