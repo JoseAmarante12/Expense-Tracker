@@ -29,12 +29,22 @@ function Adds(){
     name.innerHTML = nameInput.value;
     date.innerHTML = dateInput.value;
     currency.innerHTML = "$" + currencyInput.value;
+     //displays total
+     total();
 
-    //displays total
-   total();
+     //clears the text
+     clears();
     }
+    
+   
 }
 
+function clears(){
+    //clears information
+    document.getElementById("currency").value = '';
+    document.getElementById("date").value = '';
+    document.getElementById("name").value = 'Where was the expense made?';
+}
 
 function total(){
      
