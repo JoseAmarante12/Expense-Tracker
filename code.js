@@ -2,13 +2,17 @@
 function Adds(){
     
     
-    if(document.getElementById("currency").value == '' || document.getElementById("currency").value<-1 )
+    if(document.getElementById("currency").value == '' || document.getElementById("currency").value<= 0 )
     {
         alert("Enter an amount greater than 0");
     }
     else if (document.getElementById("date").value == '')
     {
         alert("Please enter a valid date");
+    }
+    else if (document.getElementById("name").value == '')
+    {
+        alert("Please give the transaction a name");
     }
     else
     {
@@ -20,6 +24,7 @@ function Adds(){
     
     //creating row in table
     let row = table.insertRow(-1);
+
     //inserts cells
     let name= row.insertCell(0);
     let date = row.insertCell(1);
@@ -29,21 +34,13 @@ function Adds(){
     name.innerHTML = nameInput.value;
     date.innerHTML = dateInput.value;
     currency.innerHTML = "$" + currencyInput.value;
+
      //displays total
      total();
 
      //clears the text
      clears();
     }
-    
-   
-}
-
-function clears(){
-    //clears information
-    document.getElementById("currency").value = '';
-    document.getElementById("date").value = '';
-    document.getElementById("name").value = 'Where was the expense made?';
 }
 
 function total(){
@@ -56,3 +53,12 @@ function total(){
 
      document.getElementById("totall").value= add.toFixed(2);
 }
+
+
+function clears(){
+    //clears information
+    document.getElementById("currency").value = '';
+    document.getElementById("date").value = '';
+    document.getElementById("name").value = 'Where was the expense made?';
+}
+
